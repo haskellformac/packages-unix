@@ -67,7 +67,8 @@ AC_CHECK_MEMBERS([struct stat.st_uctime])
 AC_CHECK_MEMBER([struct passwd.pw_gecos], [], [AC_DEFINE([HAVE_NO_PASSWD_PW_GECOS],[],[Ignore the pw_gecos member of passwd where it does not exist])], [[#include <pwd.h>]])
 
 # Functions for changing file timestamps
-AC_CHECK_FUNCS([utimensat futimens])
+# Removed to support building for macOS 10.12 on 10.13
+#AC_CHECK_FUNCS([utimensat futimens])
 AC_CHECK_FUNCS([lutimes futimes])
 
 # Additional temp functions
